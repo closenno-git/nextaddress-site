@@ -18,10 +18,9 @@ export default function StartPlanningModal({ open, onOpenChange }) {
     if (fromZip) params.append('from', fromZip);
     if (toZip) params.append('to', toZip);
     if (moveDate) params.append('date', moveDate);
-    if (housingType) params.append('housing', housingType);
+    if (housingType) params.append('type', housingType);
     if (params.toString()) url += '?' + params.toString();
-    window.open(url, '_blank');
-    onOpenChange(false);
+    window.location.href = url;
   };
 
   return (
